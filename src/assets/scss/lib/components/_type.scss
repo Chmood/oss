@@ -1,0 +1,132 @@
+/*******************************************************************************
+ * TYPE
+ * Path: lib/components/_type.scss
+ ******************************************************************************/
+
+ // Google variable fonts CDN
+// See: https://github.com/RoelN/google-variable-fonts-links
+// And: https://developers.google.com/fonts/docs/css2
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+// HTML & BODY BASE
+
+html {
+    // Define the root fontsize, aka "one rem"
+    font-size: 10 / 16 * 100%; // target size (10) / browser default size (16) = 62.5%
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: $body-bg-color-base;
+    color: $body-color-base;    
+}
+
+@mixin reset-list() {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+// DEFAULT TYPE
+
+// Margin bottom
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+ul,
+blockquote,
+cite,
+pre {
+    margin-top: 0;
+    margin-bottom: $gutter-half;
+}
+
+// PARAGRAPHS
+
+// p {}
+
+hr {
+    margin-bottom: $gutter;
+}
+
+// LINKS
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    transition: all 0.25s;
+
+    @include hocus() {
+        color: $link-color-active;
+    }
+}
+
+// BLOCKQUOTES
+
+blockquote {
+    margin-left: 0;
+    padding-left: $gutter-half;
+
+    > p {
+        font-family: $font-family-serif;
+        font-style: italic;
+        margin-bottom: $gutter-half;
+        text-indent: -$gutter / 3;
+
+        &::before {
+            content: "“";
+        }
+
+        &::after {
+            content: "”";
+        }
+    }
+
+    > cite {
+        display: block;
+        margin-bottom: $gutter;
+        font-size: $font-size-small;
+        font-style: normal;
+    }
+}
+
+// CODE
+
+// Monospace elements
+pre,
+code {
+    font-family: $font-family-monospace;
+    background-color: $body-color-base;
+    border-radius: $code-border-radius;
+}
+
+code {
+    display: inline-block;
+    padding-left: $gutter-quarter;
+    padding-right: $gutter-quarter;
+    color: white;
+}
+
+pre {
+    padding: $gutter-half;
+    overflow-x: auto;
+
+    > code {
+        padding: 0;
+    }
+}

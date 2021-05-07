@@ -1,0 +1,32 @@
+#app {
+    overflow: hidden;
+}
+
+.site-wrapper {
+    height: 100vh;
+    // display: grid;
+    display: flex;
+    flex-direction: column;
+
+    > * {
+        flex-grow: 0;
+    }
+}
+
+.site-header {
+    background-color: lightgray;
+}
+
+.site-content {
+    flex-grow: 1;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.site-aside {
+    background-color: lightsalmon;
+}
+
+.site-footer {
+    background-color: lightgray;
+}

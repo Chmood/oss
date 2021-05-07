@@ -1,0 +1,14 @@
+// TODO - WIP
+
+#nav {
+    padding: $gutter;
+
+    a {
+        font-weight: bold;
+        color: $color-primary;
+
+        &.router-link-exact-active {
+            color: $color-primary-dark;
+        }
+    }
+}
